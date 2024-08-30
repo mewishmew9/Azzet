@@ -1,0 +1,11 @@
+function lerpAngle(from, to, t) {
+    // Normalize the angles to the range [-π, π]
+    let difference = to - from;
+
+    // Wrap the difference within the range [-π, π]
+    while (difference < -Math.PI) difference += 2 * Math.PI;
+    while (difference > Math.PI) difference -= 2 * Math.PI;
+
+    // Interpolate the angle
+    return from + difference * t;
+}
